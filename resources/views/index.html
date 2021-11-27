@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>1C system</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="fa/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  </head>
+  <body>
+    <main class="row mx-auto">
+      <nav class="navbar fixed-top top-navbar">
+        <button class="toggler btn button-open">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-top ml-auto">
+          <button class="navbar-top-button button-bell" id="button-bell">
+            <i class="fas fa-bell"></i>
+          </button>
+          <button class="navbar-top-button button-power" id="button-power">
+            <i class="fas fa-power-off"></i>
+          </button>
+        </div>
+      </nav>
+      <div class="sidebar col-lg-3 col-md-4">
+        <div class="text-right">
+          <button class="toggler btn button-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="profile-part">
+          <div class="profile-image">
+            <img src="assets/image1.jpg" alt="photo" class="profile-photo" />
+          </div>
+          <div class="profile-info">
+            <p>Abdullayev Bahodir</p>
+          </div>
+        </div>
+        <div class="menu-part">
+          <ul>
+            <li class="menu-item active">
+              <a class="menu-item-link" href="#">Кредит</a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-item-link" href="#">Молиявий холат</a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-item-link" href="#">Касса</a>
+            </li>
+            <li class="menu-item d-none">
+              <a class="menu-item-link" href="#">Товар приход</a>
+            </li>
+            <li class="menu-item d-none">
+              <a class="menu-item-link" href="#">Товар расход</a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-item-link" href="#">Админ панел</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="main-part col-lg-9 col-md-8">
+        <section class="px-5 d-none">
+          <div class="col-md-8 mx-auto px-5 py-3 credit-form">
+            <form class="">
+              <h4 class="text-center mb-4">Shaxs uchun</h4>
+              <div class="form-row mb-3">
+                <div class="input-group">
+                  <label for="name" class="col-md-4 mt-2"
+                    >Ism-familiya <span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    class="form-control col-md-8"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-row mb-3">
+                <div class="input-group">
+                  <label for="phoneNumber1" class="col-md-4 mt-2"
+                    >Telefon raqami <span class="text-danger">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="phoneNumber1"
+                    class="form-control col-md-8"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-row mb-3">
+                <div class="input-group">
+                  <label for="phoneNumber2" class="col-md-4 mt-2"
+                    >Telefon raqami</label
+                  >
+                  <input
+                    type="text"
+                    id="phoneNumber2"
+                    class="form-control col-md-8"
+                  />
+                </div>
+              </div>
+              <div class="form-row mb-3">
+                <div class="input-group">
+                  <label for="address" class="col-md-4 mt-2">Adres</label>
+                  <input
+                    type="text"
+                    id="address"
+                    class="form-control col-md-8"
+                  />
+                </div>
+              </div>
+              <div class="form-row mb-3">
+                <div class="input-group">
+                  <p class="col-md-4 pl-3 mb-0 mt-2">Passport</p>
+                  <div class="col-md-8 px-0">
+                    <label for="passport" class="label-file"
+                      >Choose a file</label
+                    >
+                    <input type="file" id="passport" />
+                  </div>
+                </div>
+              </div>
+              <div class="form-row mb-3">
+                <div class="input-group">
+                  <p class="col-md-4 pl-3 mb-0 mt-2">Sug'urta</p>
+                  <div class="col-md-8 px-0">
+                    <label for="insurance" class="label-file"
+                      >Choose a file</label
+                    >
+                    <input type="file" id="insurance" />
+                  </div>
+                </div>
+              </div>
+              <hr />
+              <h4 class="text-center mb-3">Kredit uchun</h4>
+              <div class="mb-3 form-row">
+                <p class="col-md-4 pl-3 mb-0">Unikal kod:</p>
+                <p class="font-weight-bold col-md-8 mb-0">AB1234567</p>
+              </div>
+
+              <div class="form-row mb-3">
+                <div class="input-group">
+                  <label for="creditNumber" class="col-md-4 mt-2"
+                    >Shartnoma №</label
+                  >
+                  <input
+                    type="text"
+                    id="creditNumber"
+                    class="form-control col-md-8"
+                  />
+                </div>
+              </div>
+              <div class="form-row mb-3">
+                <div class="input-group">
+                  <label for="sumDebt" class="col-md-4 mt-2"
+                    >Qarz summasi</label
+                  >
+                  <input
+                    type="number"
+                    id="sumDebt"
+                    class="form-control col-md-8"
+                  />
+                  <div class="input-group-append">
+                    <span class="input-group-text">so'm</span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row mb-3">
+                <div class="input-group">
+                  <label for="sumResidue" class="col-md-4 mt-2"
+                    >Qoldiq summa</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control col-md-8"
+                    id="sumResidue"
+                  />
+                  <div class="input-group-append">
+                    <span class="input-group-text">so'm</span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row mb-3">
+                <div class="input-group">
+                  <label for="percent" class="col-md-4 mt-2">Foiz</label>
+                  <input
+                    type="number"
+                    id="percent"
+                    class="form-control col-md-8"
+                  />
+                  <div class="input-group-append">
+                    <span class="input-group-text">%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row mb-3">
+                <div class="input-group">
+                  <label for="penalty" class="col-md-4 mt-2">Penya</label>
+                  <input
+                    type="number"
+                    id="penalty"
+                    class="form-control col-md-8"
+                  />
+                  <div class="input-group-append">
+                    <span class="input-group-text">%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row mb-3">
+                <div class="input-group">
+                  <label for="creditTerm" class="col-md-4 mt-2"
+                    >Kredit muddati</label
+                  >
+                  <select
+                    name="creditTerm"
+                    id="creditTerm"
+                    class="form-control col-md-8"
+                  >
+                    <option value="3">3 oy</option>
+                    <option value="6">6 oy</option>
+                    <option value="9">9 oy</option>
+                    <option value="12">1 yil</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row mb-3">
+                <div class="input-group">
+                  <p class="col-md-4 pl-3 mb-0 mt-2">Shartnoma</p>
+                  <div class="col-md-8 px-0">
+                    <label for="credit-photo" class="label-file"
+                      >Choose a file</label
+                    >
+                    <input type="file" id="credit-photo" />
+                  </div>
+                </div>
+              </div>
+              <div class="form-row text-center">
+                <button class="btn btn-success mx-auto">Submit</button>
+              </div>
+            </form>
+          </div>
+        </section>
+        <section class="px-5 d-none">
+          <div class="row mx-auto search-part">
+            <div class="col-3">
+              <select class="form-control" id="searchType">
+                <option value="name">Ism bo'yicha</option>
+                <option value="creditNumber">Shartnoma raqami</option>
+                <option value="uniqueNumber">Unikal kod</option>
+                <option value="date">Sana</option>
+              </select>
+            </div>
+            <div class="input-group col-4 searchDivs" id="searchByName">
+              <label for="searchClientName" class="mt-2 mr-3"
+                >Ism familiya</label
+              >
+              <input
+                type="text"
+                id="searchClientName"
+                class="form-control search-input"
+              />
+            </div>
+            <div
+              class="input-group col-4 d-none searchDivs"
+              id="searchByCreditNumber"
+            >
+              <label for="searchClientByCreditNumber" class="mt-2 mr-3"
+                >Shartnoma raqami</label
+              >
+              <input
+                type="text"
+                id="searchClientByCreditNumber"
+                class="form-control search-input"
+              />
+            </div>
+            <div
+              class="input-group col-4 d-none searchDivs"
+              id="searchByUniqueNumber"
+            >
+              <label for="searchClientByUniqueNumber" class="mt-2 mr-3"
+                >Unikal kod</label
+              >
+              <input
+                type="text"
+                id="searchClientByUniqueNumber"
+                class="form-control search-input"
+              />
+            </div>
+            <div class="input-group col-7 d-none searchDivs" id="searchByDate">
+              <div class="input-group col-6">
+                <label for="searchStartDate" class="mt-2 mr-3">От</label>
+                <input
+                  type="date"
+                  id="searchStartDate"
+                  class="form-control search-input"
+                />
+              </div>
+              <div class="input-group col-6">
+                <label for="searchEndDate" class="mt-2 mr-3">До</label>
+                <input
+                  type="date"
+                  id="searchEndDate"
+                  class="form-control search-input"
+                />
+              </div>
+            </div>
+            <div class="col-1">
+              <button class="search-button">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+            <div class="col-3 d-none searchDivs" id="emptySpaceDiv"></div>
+            <div class="col-1 text-right">
+              <button class="plus-button">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+          <!-- <div class="blue-line"></div> -->
+          <div class="col-12 row mx-auto mt-3">
+            <table class="table table-client">
+              <thead>
+                <tr class="bg-dark text-white">
+                  <th scope="col" class="border-right">Ism familiya</th>
+                  <th scope="col" class="border-right">Shartnoma</th>
+                  <th scope="col" class="border-right">Telefon raqami</th>
+                  <th scope="col" class="border-right">Kredit summasi</th>
+                  <th scope="col" class="border-right">Qolgan summa</th>
+                  <th scope="col">Ko'rish</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Abed Hassan</th>
+                  <td>AB12345678</td>
+                  <td>934708586</td>
+                  <td>12 000 000 so'm</td>
+                  <td>2 000 000 so'm</td>
+                  <td>
+                    <a href="#"><i class="fas fa-eye"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">John Smith</th>
+                  <td>DB74528567</td>
+                  <td>335453009</td>
+                  <td>6 000 000 so'm</td>
+                  <td>3 000 000 so'm</td>
+                  <td>
+                    <a href="#"><i class="fas fa-eye"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Robert Sulo</th>
+                  <td>CC71794564</td>
+                  <td>995410224</td>
+                  <td>16 000 000 so'm</td>
+                  <td>12 000 000 so'm</td>
+                  <td>
+                    <a href="#"><i class="fas fa-eye"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Francisco Romero</th>
+                  <td>DC14794562</td>
+                  <td>945412424</td>
+                  <td>20 985 000 so'm</td>
+                  <td>350 000 so'm</td>
+                  <td>
+                    <a href="#"><i class="fas fa-eye"></i></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section class="px-5 d-none">
+          <div class="row mx-auto clientInfoPart">
+            <div class="col-6 row">
+              <div class="col-5">
+                <p class="mt-3 mb-0" style="font-size: 20px;">
+                  Mijozning ismi:
+                </p>
+              </div>
+              <div class="col-7 clientNamePart">
+                <p class="d-inline-block mt-3 mb-0">O'ralov Shahzod</p>
+                <a href="#" class="iconPassport"
+                  ><i class="fas fa-file-image "></i
+                ></a>
+                <a href="#" class="iconInsurance"
+                  ><i class="fas fa-file-alt "></i
+                ></a>
+              </div>
+            </div>
+            <div class="col-6 row">
+              <div class="col-11 text-right">
+                <button class="clientButtons mt-3 button-edit">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button class="clientButtons mt-3 button-delete">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </div>
+              <div class="col-1 text-right">
+                <button class="clientButtons button-exit mt-2">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="row mx-auto">
+            <div class="credit-info row col-12">
+              <div
+                class="credit-info-header credit-info-header-active row col-12 mx-auto"
+              >
+                <div class="col-8">
+                  <p class="d-inline-block">Kredit:</p>
+                  <p class="d-inline-block credit-number">AG 4351726</p>
+                </div>
+                <div class="col-4 text-right">
+                  <p class="d-inline-block">Hujjatlar:</p>
+                  <a href="#" class="credit-buttons credit-buttons-1">
+                    <i class="fas fa-file-invoice"></i>
+                  </a>
+                  <a href="#" class="credit-buttons credit-buttons-2">
+                    <i class="fas fa-file-alt"></i>
+                  </a>
+                  <a href="#" class="credit-buttons credit-buttons-3">
+                    <i class="fas fa-file-pdf"></i>
+                  </a>
+                </div>
+              </div>
+              <div
+                class="credit-info-body credit-info-body-active row col-12 mx-auto"
+              ></div>
+            </div>
+            <div class="credit-info row col-12">
+              <div
+                class="credit-info-header credit-info-header-deadline row col-12 mx-auto"
+              >
+                <div class="col-8">
+                  <p class="d-inline-block">Kredit:</p>
+                  <p class="d-inline-block credit-number">AG 4351726</p>
+                </div>
+                <div class="col-4 text-right">
+                  <p class="d-inline-block">Hujjatlar:</p>
+                  <a href="#" class="credit-buttons credit-buttons-1">
+                    <i class="fas fa-file-invoice"></i>
+                  </a>
+                  <a href="#" class="credit-buttons credit-buttons-2">
+                    <i class="fas fa-file-alt"></i>
+                  </a>
+                  <a href="#" class="credit-buttons credit-buttons-3">
+                    <i class="fas fa-file-pdf"></i>
+                  </a>
+                </div>
+              </div>
+              <div
+                class="credit-info-body credit-info-body-deadline row col-12 mx-auto"
+              ></div>
+            </div>
+            <div class="credit-info row col-12">
+              <div
+                class="credit-info-header credit-info-header-inactive row col-12 mx-auto"
+              >
+                <div class="col-8">
+                  <p class="d-inline-block">Kredit:</p>
+                  <p class="d-inline-block credit-number">AG 4351726</p>
+                </div>
+                <div class="col-4 text-right">
+                  <p class="d-inline-block">Hujjatlar:</p>
+                  <a href="#" class="credit-buttons credit-buttons-1">
+                    <i class="fas fa-file-invoice"></i>
+                  </a>
+                  <a href="#" class="credit-buttons credit-buttons-2">
+                    <i class="fas fa-file-alt"></i>
+                  </a>
+                  <a href="#" class="credit-buttons credit-buttons-3">
+                    <i class="fas fa-file-pdf"></i>
+                  </a>
+                </div>
+              </div>
+              <div
+                class="credit-info-body credit-info-body-inactive row col-12 mx-auto"
+              ></div>
+            </div>
+          </div>
+        </section>
+        <section class="px-5">
+          
+        </section>
+      </div>
+    </main>
+    <script src="js/main.js"></script>
+    <script src="js/graph.js"></script>
+    <script></script>
+  </body>
+</html>
+<!-- Ism familiya sharif -->
+<!-- Unikal kod -->
